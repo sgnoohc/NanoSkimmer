@@ -45,8 +45,8 @@ python scripts/nano_postproc.py \
     ./ \
     ${NANOAODPATH} \
     -b python/postprocessing/examples/keep_and_drop.txt \
-    -I PhysicsTools.NanoAODTools.postprocessing.examples.vbsHwwSkimModule \
-    vbsHwwSkimModuleConstr
+    -I PhysicsTools.NanoAODTools.postprocessing.examples.nanoSkimModule \
+    nanoSkimModuleConstr
 
 # Copy back the output to parent directory
 BASENAMEWITHEXT=$(basename ${NANOAODPATH})
