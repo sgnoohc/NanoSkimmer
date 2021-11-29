@@ -21,6 +21,7 @@ if [ -z $2 ]; then usage; fi
 isdata=false
 if [[ "${SAMPLENAME}" == *"EGamma"* ]]; then isdata=true; fi
 if [[ "${SAMPLENAME}" == *"MuonEG"* ]]; then isdata=true; fi
+if [[ "${SAMPLENAME}" == *"DoubleEG"* ]]; then isdata=true; fi
 if [[ "${SAMPLENAME}" == *"DoubleMuon"* ]]; then isdata=true; fi
 if [[ "${SAMPLENAME}" == *"SingleElectron"* ]]; then isdata=true; fi
 if [[ "${SAMPLENAME}" == *"SingleMuon"* ]]; then isdata=true; fi
