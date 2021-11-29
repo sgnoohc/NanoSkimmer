@@ -2,6 +2,7 @@ import os
 
 from metis.Sample import DBSSample, DirectorySample
 from metis.CondorTask import CondorTask
+from LocalNanoAODMergeTask import LocalNanoAODMergeTask
 from metis.StatsParser import StatsParser
 from metis.Utils import good_sites
 from samples import samples
@@ -25,6 +26,8 @@ if __name__ == "__main__":
 
     # submission tag
     tarfile = "/nfs-7/userdata/phchang/NanoSkimmers/{}_{}_package.tar.gz".format(skimtype, tag)
+
+    skim_merged_dir = "/nfs-7/userdata/phchang/NanoSkim/{}_{}/".format(skimtype, tag)
 
     task_summary = {}
 
@@ -56,6 +59,16 @@ if __name__ == "__main__":
 
         # Set task summary
         task_summary[task.get_sample().get_datasetname()] = task.get_task_summary()
+
+        if task.complete():
+            samplename = os.path.basename(os.path.normpath(task.get_outputdir()))
+            mergetask = LocalNanoAODMergeTask(
+                    input_filenames=task.get_outputs(),
+                    output_filename="{}/merged.root".format(skim_merged_dir + "/" + samplename + "/merged"),
+                    ignore_bad = False,
+                    )
+            if not mergetask.complete():
+                mergetask.process()
 
     # Parse the summary and make a summary.txt that will be used to pretty status of the jobs
     os.system("rm -f web_summary.json")
