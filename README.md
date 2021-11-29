@@ -15,13 +15,18 @@ Then, to create a ```package.tar.gz``` for the condor jobs
 
     sh create_package.sh # This creates a package.tar.gz
 
-To test the package locally on some NanoAOD file
+Get a sample NanoAOD to test on.
 
-    sh test_package.sh package.tar.gz /hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWH_C2V_4p5_RunIIAutumn18NanoAOD_VBSWWH_C2V_4p5_v3_ext1/merged/output.root
+    mkdir -p mc/RunIISummer20UL18NanoAODv9/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/260000/
+    xrdcp root://cmsxrootd.fnal.gov//store/mc/RunIISummer20UL18NanoAODv9/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/260000/7075899E-49EC-3B4F-BA70-877BC8E8C8CF.root mc/RunIISummer20UL18NanoAODv9/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/260000/.
+
+Test the package locally on the NanoAOD file just downloaded.
+
+    sh test_package.sh package.tar.gz mc/RunIISummer20UL18NanoAODv9/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/260000/7075899E-49EC-3B4F-BA70-877BC8E8C8CF.root
 
 Copy the package.tar.gz to ```/nfs-7``` area
 
-    cp package.tar.gz /nfs-7/userdata/phchang/VBSHWWNanoSkimmer_v41_CMSSW_10_2_13_slc7_amd64_gcc700.package.tar.gz
+    cp package.tar.gz /nfs-7/userdata/phchang/NanoSkimmers/POGID4Lep10_v1_package.tar.gz
 
 ## Condor
 
@@ -39,8 +44,7 @@ Then, setup the ```ProjectMetis```
 
 And run
 
-    python runMetis.py v41 # automatically picks up /nfs-7/userdata/phchang/VBSHWWNanoSkimmer_v41_CMSSW_10_2_13_slc7_amd64_gcc700.package.tar.gz as the package
+    python runMetis.py POGID4Lep10 v1 # automatically picks up /nfs-7/userdata/phchang/NanoSkimmers/POGID4Lep10_v1_package.tar.gz as the package
 
 NOTE: ```/nfs-7/userdata/phchang``` is hardcoded! so please change if you don't have your skimmer in philip's place. (Or ask him to put it in his place.)  
-Or, if needed, in ```runMetis.py```, point to the desired ```package.tar.gz``` by modifying ```tarfile``` variable, and give a new ```tag```.
 
