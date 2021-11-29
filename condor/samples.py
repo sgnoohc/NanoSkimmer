@@ -2,264 +2,6 @@
 
 from metis.Sample import DBSSample, DirectorySample
 
-# Specify a dataset name and a short name for the output root file on nfs
-samples_v7 = [
-
-        # 2016 NanoAODv7
-        DBSSample(dataset="/WJetsToLNu_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext2-v1/NANOAODSIM"),
-        DBSSample(dataset="/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext1-v1/NANOAODSIM"),
-        DBSSample(dataset="/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext2-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"), # 67860400
-        DBSSample(dataset="/TTToSemiLeptonic_TuneCP5_PSweights_13TeV-powheg-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"), # 107604800
-        DBSSample(dataset="/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTWJetsToLNu_TuneCP5_PSweights_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTZToLLNuNu_M-10_TuneCP5_PSweights_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTZToLL_M-1to10_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16NanoAODv7-Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ttHTobb_ttToSemiLep_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ttHToNonbb_M125_TuneCUETP8M2_ttHtranche3_13TeV-powheg-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WpWpJJ_EWK-QCD_TuneCUETP8M1_13TeV-madgraph-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ZZTo4L_13TeV_powheg_pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/GluGluHToZZTo4L_M125_13TeV_powheg2_JHUgenV6_pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ST_tWll_5f_LO_13TeV-MadGraph-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/tZq_ll_4f_ckm_NLO_TuneCP5_PSweights_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WZG_TuneCUETP8M1_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WWW_4F_TuneCUETP8M1_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WWZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTWW_TuneCUETP8M2T4_13TeV-madgraph-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext1-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTWZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext1-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTZH_TuneCUETP8M2T4_13TeV-madgraph-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext1-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTZZ_TuneCUETP8M2T4_13TeV-madgraph-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext1-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTWH_TuneCUETP8M2T4_13TeV-madgraph-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext1-v1/NANOAODSIM"),
-        DBSSample(dataset="/TTTT_TuneCUETP8M1_13TeV-amcatnlo-pythia8/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WWToLNuQQ_13TeV-powheg/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8_ext1-v1/NANOAODSIM"),
-        DBSSample(dataset="/ST_tW_antitop_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ST_tW_top_5f_NoFullyHadronicDecays_13TeV-powheg_TuneCUETP8M1/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ST_t-channel_antitop_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/ST_t-channel_top_4f_inclusiveDecays_13TeV-powhegV2-madspin-pythia8_TuneCUETP8M1/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v2/NANOAODSIM"),
-        DBSSample(dataset="/ST_s-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-        DBSSample(dataset="/WWTo2L2Nu_13TeV-powheg/RunIISummer16NanoAODv7-PUMoriond17_Nano02Apr2020_102X_mcRun2_asymptotic_v8-v1/NANOAODSIM"),
-
-        # 2017 NanoAODv7
-        # DBSSample(dataset="/WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 33073306
-        DBSSample(dataset="/WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 44627200
-        # DBSSample(dataset="/WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_EXT_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 30008250
-        # DBSSample(dataset="/DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 39521230
-        DBSSample(dataset="/DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 39536839
-        # DBSSample(dataset="/DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 316134
-        # DBSSample(dataset="/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017RECOSIMstep_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 47990369
-        DBSSample(dataset="/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017RECOSIMstep_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 49011552
-        DBSSample(dataset="/TTJets_DiLept_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 28380110
-        DBSSample(dataset="/TTJets_SingleLeptFromT_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 61761347
-        DBSSample(dataset="/TTJets_SingleLeptFromTbar_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 56648453
-        DBSSample(dataset="/TTTo2L2Nu_TuneCP5_PSweights_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 68812194
-        DBSSample(dataset="/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 197613000
-        DBSSample(dataset="/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 43506449
-        DBSSample(dataset="/TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 4925829
-        DBSSample(dataset="/TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_EXT_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 7932650
-        DBSSample(dataset="/TTZToLL_M-1to10_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 250000
-        # DBSSample(dataset="/TTZToLL_M-1to10_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_EXT_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 245978
-        DBSSample(dataset="/ttHTobb_ttToSemiLep_M125_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 9332943
-        # DBSSample(dataset="/ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 5499293
-        DBSSample(dataset="/ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 7216085
-        DBSSample(dataset="/WpWpJJ_EWK-QCD_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 149000
-        DBSSample(dataset="/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 10987679
-        # DBSSample(dataset="/ZZTo4L_13TeV_powheg_pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 16075000
-        # DBSSample(dataset="/ZZTo4L_13TeV_powheg_pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 97920639
-        # DBSSample(dataset="/ZZTo4L_13TeV_powheg_pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext2-v1/NANOAODSIM"), # 86706666
-        DBSSample(dataset="/ZZTo4L_13TeV_powheg_pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 6964071
-        # DBSSample(dataset="/GluGluHToZZTo4L_M125_13TeV_powheg2_JHUGenV7011_pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 965198
-        DBSSample(dataset="/GluGluHToZZTo4L_M125_13TeV_powheg2_JHUGenV7011_pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext3-v1/NANOAODSIM"), # 988000
-        DBSSample(dataset="/ST_tWll_5f_LO_TuneCP5_PSweights_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 986000
-        DBSSample(dataset="/tZq_ll_4f_ckm_NLO_TuneCP5_PSweights_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 13276146
-        DBSSample(dataset="/WZG_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 1000000
-        DBSSample(dataset="/WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 240000
-        # DBSSample(dataset="/WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_EXT_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 232300
-        DBSSample(dataset="/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 250000
-        # DBSSample(dataset="/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_EXT_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 250000
-        DBSSample(dataset="/WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 250000
-        # DBSSample(dataset="/WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_EXT_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 250000
-        DBSSample(dataset="/ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 250000
-        # DBSSample(dataset="/ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_EXT_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 250000
-        DBSSample(dataset="/TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 962000
-        # DBSSample(dataset="/TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTZH_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTZZ_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTWH_TuneCP5_13TeV-madgraph-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTTT_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 1000000
-        DBSSample(dataset="/WWToLNuQQ_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 9994191
-        # DBSSample(dataset="/WWToLNuQQ_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 8782525
-        DBSSample(dataset="/ST_tW_antitop_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8_ext1-v1/NANOAODSIM"), # 6127285
-        # DBSSample(dataset="/ST_tW_antitop_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 5635539
-        DBSSample(dataset="/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 4955102
-        DBSSample(dataset="/ST_t-channel_antitop_4f_inclusiveDecays_TuneCP5_13TeV-powhegV2-madspin-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 3675910
-        DBSSample(dataset="/ST_t-channel_top_4f_inclusiveDecays_TuneCP5_13TeV-powhegV2-madspin-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_new_pmx_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 5982064
-        DBSSample(dataset="/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 9883805
-        DBSSample(dataset="/WWTo2L2Nu_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIFall17NanoAODv7-PU2017_12Apr2018_Nano02Apr2020_102X_mc2017_realistic_v8-v1/NANOAODSIM"), # 2000000
-
-        DBSSample(dataset="/WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 71026861
-        # DBSSample(dataset="/DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 39392062
-        DBSSample(dataset="/DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 46976952
-        DBSSample(dataset="/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 100194597
-        DBSSample(dataset="/TTJets_DiLept_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 28701360
-        DBSSample(dataset="/TTJets_SingleLeptFromT_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 57137426
-        DBSSample(dataset="/TTJets_SingleLeptFromTbar_TuneCP5_13TeV-madgraphMLM-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 59929205
-        DBSSample(dataset="/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 64310000
-        DBSSample(dataset="/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 100790000
-        DBSSample(dataset="/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext3-v1/NANOAODSIM"), # 199829998
-        DBSSample(dataset="/TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 4911941
-        DBSSample(dataset="/TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 13280000
-        DBSSample(dataset="/TTZToLL_M-1to10_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 250000
-        DBSSample(dataset="/ttHTobb_ttToSemiLep_M125_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 9632600
-        DBSSample(dataset="/ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 7525991
-        DBSSample(dataset="/WpWpJJ_EWK-QCD_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 150000
-        # DBSSample(dataset="/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 10749269
-        DBSSample(dataset="/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 11248318
-        DBSSample(dataset="/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 6689900
-        # DBSSample(dataset="/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext2-v1/NANOAODSIM"), # 98870000
-        DBSSample(dataset="/GluGluHToZZTo4L_M125_13TeV_powheg2_JHUGenV7011_pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 958000
-        DBSSample(dataset="/ST_tWll_5f_LO_TuneCP5_PSweights_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 248600
-        DBSSample(dataset="/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 13736000
-        DBSSample(dataset="/WZG_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 1960000
-        DBSSample(dataset="/WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 240000
-        DBSSample(dataset="/WWZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 250000
-        DBSSample(dataset="/WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 250000
-        DBSSample(dataset="/ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 250000
-        # DBSSample(dataset="/TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 185000
-        DBSSample(dataset="/TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext2-v1/NANOAODSIM"), # 800000
-        DBSSample(dataset="/TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTZH_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTZZ_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 200000
-        DBSSample(dataset="/TTWH_TuneCP5_13TeV-madgraph-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 200000
-        # DBSSample(dataset="/TTTT_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 2321506
-        DBSSample(dataset="/TTTT_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21_ext2-v1/NANOAODSIM"), # 9592768
-        DBSSample(dataset="/WWToLNuQQ_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 19199100
-        DBSSample(dataset="/ST_tW_antitop_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_EXT1_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 5823328
-        # DBSSample(dataset="/ST_tW_antitop_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_EXT_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 1086487
-        DBSSample(dataset="/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_EXT1_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 7636887
-        # DBSSample(dataset="/ST_tW_top_5f_NoFullyHadronicDecays_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_EXT_102X_upgrade2018_realistic_v21_ext1-v1/NANOAODSIM"), # 1085847
-        DBSSample(dataset="/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 79090800
-        DBSSample(dataset="/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 154307600
-        DBSSample(dataset="/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 19890000
-        DBSSample(dataset="/WWTo2L2Nu_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/NANOAODSIM"), # 7758900
-
-        # Data 2016 (NanoAODv7)
-        DBSSample(dataset="/DoubleEG/Run2016B-02Apr2020_ver1-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2016B-02Apr2020_ver2-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2016C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2016D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2016E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2016F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2016G-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2016H-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016B-02Apr2020_ver1-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016B-02Apr2020_ver2-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016G-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2016H-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016B-02Apr2020_ver1-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016B-02Apr2020_ver2-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016E-02Apr2020-v2/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016E-02Apr2020_17Jul2018-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016G-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016H-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016B-02Apr2020_ver1-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016B-02Apr2020_ver2-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016G-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2016H-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016B-02Apr2020_ver1-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016B-02Apr2020_ver2-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016G-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2016H-02Apr2020-v1/NANOAOD"), #
-
-        # Data 2017 (NanoAODv7)
-        DBSSample(dataset="/DoubleEG/Run2017B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2017C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2017D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2017E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleEG/Run2017F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2017B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2017C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2017D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2017E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2017F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2017B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2017C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2017D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2017E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2017F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2017B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2017C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2017D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2017E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleElectron/Run2017F-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2017B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2017C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2017D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2017E-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2017F-02Apr2020-v1/NANOAOD"), #
-
-        # Data 2018 (NanoAODv7)
-        DBSSample(dataset="/DoubleMuon/Run2018A-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2018B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2018C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/DoubleMuon/Run2018D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2016E-02Apr2020_17Jul2018-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2018A-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2018B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2018C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/MuonEG/Run2018D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/EGamma/Run2018A-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/EGamma/Run2018B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/EGamma/Run2018C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/EGamma/Run2018D-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2018A-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2018B-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2018C-02Apr2020-v1/NANOAOD"), #
-        DBSSample(dataset="/SingleMuon/Run2018D-02Apr2020-v1/NANOAOD"), #
-
-        DirectorySample(
-            location = "/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWH_C2V_6_20210313_RunIIAutumn18NanoAOD_v2/merged",
-            dataset = "/VBSWmpWmpHToLNuLNu_C2V_6_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIIAutumn18NanoAODv6-Nano25Oct2019_102X_upgrade2018_realistic_v20-v1/NANOAODSIM",
-            ),
-        DirectorySample(
-            location = "/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWH_C2V_m2_RunIIAutumn18NanoAOD_VBSWWH_C2V_m2_v3/merged",
-            dataset = "/VBSWmpWmpHToLNuLNu_C2V_m2_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIIAutumn18NanoAODv6-Nano25Oct2019_102X_upgrade2018_realistic_v20-v1/NANOAODSIM",
-            ),
-        DirectorySample(
-            location = "/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWH_C2V_3_20210314_RunIIAutumn18NanoAOD_VBSWWH_C2V_3_v3/merged",
-            dataset = "/VBSWmpWmpHToLNuLNu_C2V_3_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIIAutumn18NanoAODv6-Nano25Oct2019_102X_upgrade2018_realistic_v20-v1/NANOAODSIM",
-            ),
-        DirectorySample(
-            location = "/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWH_C2V_4p5_RunIIAutumn18NanoAOD_VBSWWH_C2V_4p5_v3/merged",
-            dataset = "/VBSWmpWmpHToLNuLNu_C2V_4p5_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIIAutumn18NanoAODv6-Nano25Oct2019_102X_upgrade2018_realistic_v20-v1/NANOAODSIM",
-            ),
-        DirectorySample(
-            location = "/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWH_C2V_4p5_RunIIAutumn18NanoAOD_VBSWWH_C2V_4p5_v3_ext1/merged/",
-            dataset = "/VBSWmpWmpHToLNuLNu_C2V_4p5_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIIAutumn18NanoAODv6-Nano25Oct2019_102X_upgrade2018_realistic_v20-v1_ext1/NANOAODSIM",
-            ),
-
-        ]
-
 samples_UL = [
 
         # 2018 Data
@@ -520,44 +262,51 @@ samples_UL = [
         DBSSample(dataset="/TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16NanoAODAPVv2-106X_mcRun2_asymptotic_preVFP_v9-v1/NANOAODSIM"),                                                                                       # /TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16NanoAODAPVv2-106X_mcRun2_asymptotic_preVFP_v9-v1/NANOAODSIM                                          filesizeGB: 0.88 nfiles: 16 nevents: 288000 nlumis: 288
         DBSSample(dataset="/TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16NanoAODAPVv2-106X_mcRun2_asymptotic_preVFP_v9-v1/NANOAODSIM"),                                                                                       # /TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL16NanoAODAPVv2-106X_mcRun2_asymptotic_preVFP_v9-v1/NANOAODSIM                                          filesizeGB: 0.4 nfiles: 2 nevents: 140000 nlumis: 140
 
-        # Signal samples
+        ]
 
-        # DirectorySample(location="/hadoop/cms/store/user/jguiang/VBSWWHSignalGeneration/VBSWWH_Incl_C2V4p5_privateMC_102x_NANOAODSIM_v1.1.0/merged/", dataset="/VBSWmpWmpH_C2V_4p5_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer16NanoAODv7/NANOAODSIM")  , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL16APVNanoAODv2_v1_NANOAODSIM_v1", dataset="/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL16APVNanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL16NanoAODv2_v1_NANOAODSIM_v1", dataset="/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL16NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL17NanoAODv2_v1-ext1_NANOAODSIM_v1", dataset="/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL17NanoAODv2_v1-ext1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL17NanoAODv2_v1_NANOAODSIM_v1", dataset="/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL17NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL18NanoAODv2_v1-ext1_NANOAODSIM_v1", dataset="/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL18NanoAODv2_v1-ext1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL18NanoAODv2_v1_NANOAODSIM_v1", dataset="/VBSWWHToLNuLNubb_C2V_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL18NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL16APVNanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL16APVNanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL16NanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL16NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL17NanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL17NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL18NanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_CV_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL18NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL16APVNanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL16APVNanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL16NanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL16NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL17NanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL17NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8_PRIVATE_RunIISummer20UL18NanoAODv2_v1_NANOAODSIM_v1/merged/", dataset="/VBSWWHToLNuLNubb_C3_TuneCP5_madgraph_pythia8/PRIVATE_RunIISummer20UL18NanoAODv2_v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_m2p5_Azure_v2/merged/" , dataset="/VBSWmpWmpH_C2V_m2p5_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_m2_Azure_v2/merged/"   , dataset="/VBSWmpWmpH_C2V_m2_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")   , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_m1_Azure_v2/merged/"   , dataset="/VBSWmpWmpH_C2V_m1_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")   , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_0_Azure_v2/merged/"    , dataset="/VBSWmpWmpH_C2V_0_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_1_Azure_v2/merged/"    , dataset="/VBSWmpWmpH_C2V_1_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_3_Azure_v2/merged/"    , dataset="/VBSWmpWmpH_C2V_3_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_4_Azure_v2/merged/"    , dataset="/VBSWmpWmpH_C2V_4_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL17_VBSWWH_incl_v2_C2V_4p5_Azure_v2/merged/"  , dataset="/VBSWmpWmpH_C2V_4p5_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL17NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")  , # filesizeGB : 4.6 , nfiles : 14 , nevents : 349750 , nlumis : -1
-
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_m2p5_Azure/merged/"    , dataset="/VBSWmpWmpH_C2V_m2p5_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM") , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_m2_Azure/merged/"      , dataset="/VBSWmpWmpH_C2V_m2_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")   , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_m1_Azure/merged/"      , dataset="/VBSWmpWmpH_C2V_m1_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")   , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_0_Azure/merged/"       , dataset="/VBSWmpWmpH_C2V_0_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_1_Azure/merged/"       , dataset="/VBSWmpWmpH_C2V_1_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_3_Azure/merged/"       , dataset="/VBSWmpWmpH_C2V_3_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_4_Azure/merged/"       , dataset="/VBSWmpWmpH_C2V_4_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")    , # filesizeGB : x.x , nfiles : xx , nevents : xxxxxx , nlumis : -1
-        # DirectorySample(location="/hadoop/cms/store/user/phchang/VBSHWWSignalGeneration/RunIISummer20UL18_VBSWWH_incl_v2_C2V_4p5_Azure/merged/"     , dataset="/VBSWmpWmpH_C2V_4p5_TuneCP5_13TeV-madgraph-pythia8/PRIVATE_RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM")  , # filesizeGB : 8.4 , nfiles : 26 , nevents : 637250 , nlumis : -1
-
+samples_UL = [
+        DBSSample(dataset="/EGamma/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 341.3,nfiles: 226,nevents: 339013231,nlumis: 60824,
+        DBSSample(dataset="/EGamma/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 155.3,nfiles: 74,nevents: 153792795,nlumis: 29576,
+        DBSSample(dataset="/EGamma/Run2018D-UL2018_MiniAODv2_NanoAODv9-v3/NANOAOD"), # filesizeGB: 775.55,nfiles: 355,nevents: 752524583,nlumis: 134305,
+        DBSSample(dataset="/EGamma/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 154.83,nfiles: 83,nevents: 147827904,nlumis: 27563,
+        DBSSample(dataset="/DoubleMuon/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 35.45,nfiles: 25,nevents: 34565869,nlumis: 27721,
+        DBSSample(dataset="/DoubleMuon/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 35.36,nfiles: 20,nevents: 35057758,nlumis: 29913,
+        DBSSample(dataset="/DoubleMuon/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 77.89,nfiles: 54,nevents: 75491789,nlumis: 61127,
+        DBSSample(dataset="/DoubleMuon/Run2018D-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD"), # filesizeGB: 166.62,nfiles: 107,nevents: 168600679,nlumis: 136952,
+        DBSSample(dataset="/MuonEG/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 19.62,nfiles: 20,nevents: 16211567,nlumis: 29912,
+        DBSSample(dataset="/MuonEG/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 39.96,nfiles: 33,nevents: 32958503,nlumis: 61133,
+        DBSSample(dataset="/MuonEG/Run2018D-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 87.49,nfiles: 63,nevents: 71952025,nlumis: 136955,
+        DBSSample(dataset="/MuonEG/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD"), # filesizeGB: 19.45,nfiles: 22,nevents: 15652198,nlumis: 27721,
+        DBSSample(dataset="/DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 81.59,nfiles: 84,nevents: 94452816,nlumis: 94431,
+        DBSSample(dataset="/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v1/NANOAODSIM"), # filesizeGB: 124.78,nfiles: 118,nevents: 101415750,nlumis: 96790,
+        DBSSample(dataset="/GluGluHToZZTo4L_M125_TuneCP5_13TeV_powheg2_JHUGenV7011_pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 1.69,nfiles: 24,nevents: 940000,nlumis: 940,
+        DBSSample(dataset="/GluGluToContinToZZTo2e2mu_TuneCP5_13TeV-mcfm701-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 0.98,nfiles: 17,nevents: 500000,nlumis: 500,
+        DBSSample(dataset="/GluGluToContinToZZTo2e2tau_TuneCP5_13TeV-mcfm701-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 0.91,nfiles: 6,nevents: 500000,nlumis: 500,
+        DBSSample(dataset="/GluGluToContinToZZTo2mu2tau_TuneCP5_13TeV-mcfm701-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 0.84,nfiles: 16,nevents: 496000,nlumis: 496,
+        DBSSample(dataset="/GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 2.01,nfiles: 28,nevents: 974000,nlumis: 974,
+        DBSSample(dataset="/GluGluToContinToZZTo4mu_TuneCP5_13TeV-mcfm701-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 1.43,nfiles: 34,nevents: 845232,nlumis: 1274,
+        DBSSample(dataset="/GluGluToContinToZZTo4tau_TuneCP5_13TeV-mcfm701-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 0.78,nfiles: 10,nevents: 493998,nlumis: 494,
+        DBSSample(dataset="/TWZToLL_thad_Wlept_5f_DR_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 8.12,nfiles: 32,nevents: 2976000,nlumis: 2976,
+        DBSSample(dataset="/TWZToLL_tlept_Whad_5f_DR_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 7.28,nfiles: 16,nevents: 2690000,nlumis: 2690,
+        DBSSample(dataset="/TWZToLL_tlept_Wlept_5f_DR_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 2.65,nfiles: 10,nevents: 1000000,nlumis: 1000,
+        DBSSample(dataset="/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 309.02,nfiles: 155,nevents: 145020000,nlumis: 145020,
+        DBSSample(dataset="/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 1030.79,nfiles: 391,nevents: 476408000,nlumis: 476408,
+        DBSSample(dataset="/TTWH_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 1.54,nfiles: 4,nevents: 497000,nlumis: 497,
+        DBSSample(dataset="/TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 28.34,nfiles: 13,nevents: 10450000,nlumis: 9926,
+        DBSSample(dataset="/TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 2.81,nfiles: 3,nevents: 944000,nlumis: 944,
+        DBSSample(dataset="/TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 1.46,nfiles: 2,nevents: 498000,nlumis: 498,
+        DBSSample(dataset="/TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 50.37,nfiles: 21,nevents: 19608000,nlumis: 19608,
+        DBSSample(dataset="/TTZZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 1.5,nfiles: 8,nevents: 498000,nlumis: 498,
+        DBSSample(dataset="/VHToNonbb_M125_TuneCP5_13TeV-amcatnloFXFX_madspin_pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 2.17,nfiles: 13,nevents: 1208288,nlumis: 1094,
+        DBSSample(dataset="/WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM"), # filesizeGB: 19.1,nfiles: 35,nevents: 9894000,nlumis: 9894,
+        DBSSample(dataset="/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM"), # filesizeGB: 20.4,nfiles: 37,nevents: 9961999,nlumis: 9962,
+        DBSSample(dataset="/WZG_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM"), # filesizeGB: 3.76,nfiles: 5,nevents: 2000000,nlumis: 2000,
+        DBSSample(dataset="/WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 14.94,nfiles: 18,nevents: 9821283,nlumis: 9445,
+        DBSSample(dataset="/WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM"), # filesizeGB: 20.59,nfiles: 20,nevents: 9994000,nlumis: 9994,
+        DBSSample(dataset="/ZZTo4L_TuneCP5_13TeV_powheg_pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 140.16,nfiles: 144,nevents: 98488000,nlumis: 98488,
+        DBSSample(dataset="/ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/NANOAODSIM"), # filesizeGB: 18.55,nfiles: 60,nevents: 9889000,nlumis: 9889,
+        DBSSample(dataset="/ttHToNonbb_M125_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 20.99,nfiles: 48,nevents: 7328993,nlumis: 7329,
+        DBSSample(dataset="/GluGluZH_HToWWTo2L2Nu_M125_13TeV_powheg_pythia8_TuneCP5_PSweights/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM"), # filesizeGB: 3.95,nfiles: 5,nevents: 1955168,nlumis: 4537,
         ]
 
 samples = samples_UL

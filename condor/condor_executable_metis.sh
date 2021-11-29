@@ -40,8 +40,8 @@ function stageout {
     COPY_STATUS=1
     until [ $retries -ge 10 ]
     do
-        echo "Stageout attempt $((retries+1)): env -i X509_USER_PROXY=${X509_USER_PROXY} gfal-copy -p -f -t 7200 --verbose --checksum ADLER32 ${COPY_SRC} ${COPY_DEST}"
-        env -i X509_USER_PROXY=${X509_USER_PROXY} gfal-copy -p -f -t 7200 --verbose --checksum ADLER32 ${COPY_SRC} ${COPY_DEST}
+        echo "Stageout attempt $((retries+1)): env -i X509_USER_PROXY=${X509_USER_PROXY} gfal-copy -p -f -t 600 --verbose --checksum ADLER32 ${COPY_SRC} ${COPY_DEST}"
+        env -i X509_USER_PROXY=${X509_USER_PROXY} gfal-copy -p -f -t 600 --verbose --checksum ADLER32 ${COPY_SRC} ${COPY_DEST}
         COPY_STATUS=$?
         if [ $COPY_STATUS -ne 0 ]; then
             echo "Failed stageout attempt $((retries+1))"
@@ -182,7 +182,7 @@ fi
 CMD="python scripts/nano_postproc.py \
     ./ ${INPUTFILE} \
     -b python/postprocessing/examples/keep_and_drop.txt \
-    -I PhysicsTools.NanoAODTools.postprocessing.examples.vbsHwwSkimModule vbsHwwSkimModuleConstr"
+    -I PhysicsTools.NanoAODTools.postprocessing.examples.nanoSkimModule nanoSkimModuleConstr"
 echo $CMD
 echo "Running nano_postproc.py" | tee >(cat >&2)
 $CMD > >(tee nano_postproc.txt) 2> >(tee nano_postproc_stderr.txt >&2)
@@ -232,6 +232,37 @@ echo -e "\n--- end running ---\n" #                             <----- section d
 echo "after running: ls -lrth"
 ls -lrth
 
+echo -e "\n--- begin embedding nevents ---\n" #                    <----- section division
+cat <<EOT >> embed.C
+void embed(TString rootfile, TString logfile)
+{
+    TFile* file = new TFile(rootfile, "update");
+
+    std::vector<std::vector<int>> event_list;
+    event_list.clear();
+    ifstream ifile;
+    ifile.open(logfile.Data());
+    std::string line;
+
+    TH1D* h_nevents = new TH1D("h_nevents", "h_nevents", 3, 0, 3);
+
+    int nline = 0;
+    while (std::getline(ifile, line))
+    {
+        nline++;
+        if (nline == 1) continue;
+        if (nline == 2) continue;
+        TString rawline = line;
+        int nevt = rawline.Atoi();
+        h_nevents->SetBinContent(nline-2, nevt);
+    }
+    h_nevents->Write();
+}
+EOT
+root -l -b -q 'embed.C("'${OUTPUTNAME}.root'", "nevents.txt")'
+
+echo -e "\n--- end embedding nevents ---\n" #                    <----- section division
+
 echo -e "\n--- begin copying output ---\n" #                    <----- section division
 echo "Sending output file $OUTPUTNAME.root"
 # Get local filepath name
@@ -242,10 +273,10 @@ COPY_SRC="file://`pwd`/${OUTPUTNAME}.root"
 COPY_DEST="davs://redirector.t2.ucsd.edu:1094//${OUTPUTDIRPATHNEW}/${OUTPUTNAME}_${IFILE}.root"
 stageout $COPY_SRC $COPY_DEST
 
-# Copying n events
-COPY_SRC="file://`pwd`/nevents.txt"
-COPY_DEST="davs://redirector.t2.ucsd.edu:1094//${OUTPUTDIRPATHNEW}/${OUTPUTNAME}_${IFILE}_nevents.txt"
-stageout $COPY_SRC $COPY_DEST
+# # Copying n events
+# COPY_SRC="file://`pwd`/nevents.txt"
+# COPY_DEST="davs://redirector.t2.ucsd.edu:1094//${OUTPUTDIRPATHNEW}/${OUTPUTNAME}_${IFILE}_nevents.txt"
+# stageout $COPY_SRC $COPY_DEST
 
 echo -e "\n--- end copying output ---\n" #                    <----- section division
 

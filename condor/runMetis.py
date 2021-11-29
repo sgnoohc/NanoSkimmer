@@ -11,19 +11,20 @@ import sys
 def usage():
     print("Usage:")
     print("")
-    print("  python {} TAG".format(sys.argv[0]))
+    print("  python {} SKIMTYPE TAG".format(sys.argv[0]))
     print("")
     sys.exit()
 
 try:
-    tag = sys.argv[1]
+    skimtype = sys.argv[1]
+    tag = sys.argv[2]
 except:
     usage()
 
 if __name__ == "__main__":
 
     # submission tag
-    tarfile = "/nfs-7/userdata/phchang/VBSHWWNanoSkimmer_{}_CMSSW_10_2_13_slc7_amd64_gcc700.package.tar.gz".format(tag)
+    tarfile = "/nfs-7/userdata/phchang/NanoSkimmers/{}_{}_package.tar.gz".format(skimtype, tag)
 
     task_summary = {}
 
@@ -46,7 +47,8 @@ if __name__ == "__main__":
                 scram_arch = "slc7_amd64_gcc700",
                 input_executable = "condor_executable_metis.sh", # your condor executable here
                 tarfile = tarfile, # your tarfile with assorted goodies here
-                special_dir = "VBSHWWNanoSkim/{}".format(tag), # output files into /hadoop/cms/store/<user>/<special_dir>
+                special_dir = "NanoSkim/{}_{}".format(skimtype, tag), # output files into /hadoop/cms/store/<user>/<special_dir>
+                recopy_inputs = True,
         )
         # Straightforward logic
         if not task.complete():
@@ -58,7 +60,7 @@ if __name__ == "__main__":
     # Parse the summary and make a summary.txt that will be used to pretty status of the jobs
     os.system("rm -f web_summary.json")
     os.system("rm -f summary.json")
-    webdir="~/public_html/VBSHWWNanoSkimmerDashboard"
+    webdir="~/public_html/NanoSkimmerDashboard"
     StatsParser(data=task_summary, webdir=webdir).do()
     os.system("chmod -R 755 {}".format(webdir))
     os.system("msummary -r -i {}/web_summary.json".format(webdir))
